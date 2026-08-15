@@ -341,3 +341,19 @@
     max-height: 380px;
     object-fit: contain;
 }
+@media (max-width: 768px) {
+
+    .hero-right {
+        min-height: 280px;
+        margin-top: 30px;
+    }
+
+    .hero-logo {
+        width: min(280px, 75%);
+    }
+
+    .hero-logo img {
+        max-height: 280px;
+    }
+
+}
