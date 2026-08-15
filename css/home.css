@@ -316,3 +316,28 @@
 
     color: #bbb;
 }
+/* =========================================================
+   HERO LOGO
+   ========================================================= */
+
+.hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.hero-logo {
+    width: min(380px, 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: contain;
+}
