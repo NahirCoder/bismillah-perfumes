@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Bismillah Perfumes."
+    >
+
+    <title>Contact | Bismillah Perfumes</title>
+
+    <link rel="icon" href="assets/faicon.png">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="site-logo">
+
+                <div class="site-logo-icon">
+                    🧴
+                </div>
+
+                <div>
+                    <strong>Bismillah Perfumes</strong>
+                    <span>Fragrance for every occasion</span>
+                </div>
+
+            </a>
+
+
+            <nav class="site-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Perfumes
+                </a>
+
+                <a href="categories.html">
+                    Categories
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="active"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <div class="container">
+
+                <p class="dashboard-eyebrow">
+                    GET IN TOUCH
+                </p>
+
+                <h1>
+                    Contact Us
+                </h1>
+
+                <p>
+                    Have a question about a perfume? We're here to help.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact-section">
+
+            <div class="container contact-grid">
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-card">
+
+                    <div class="contact-card-icon">
+                        💬
+                    </div>
+
+                    <h2>
+                        WhatsApp
+                    </h2>
+
+                    <p>
+                        Message us directly on WhatsApp for
+                        product questions, availability and orders.
+                    </p>
+
+                    <a
+                        href="#"
+                        id="whatsappLink"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Message on WhatsApp
+                    </a>
+
+                </div>
+
+
+                <!-- TIKTOK -->
+
+                <div class="contact-card">
+
+                    <div class="contact-card-icon">
+                        🎵
+                    </div>
+
+                    <h2>
+                        TikTok
+                    </h2>
+
+                    <p>
+                        Follow Bismillah Perfumes on TikTok for
+                        new fragrances and updates.
+                    </p>
+
+                    <a
+                        href="#"
+                        id="tiktokLink"
+                        class="btn btn-outline"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Visit TikTok
+                    </a>
+
+                </div>
+
+
+                <!-- STORE INFO -->
+
+                <div class="contact-card">
+
+                    <div class="contact-card-icon">
+                        📍
+                    </div>
+
+                    <h2>
+                        Find Us
+                    </h2>
+
+                    <p id="contactAddress">
+                        Loading store information...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT FORM -->
+
+        <section class="contact-form-section">
+
+            <div class="container">
+
+                <div class="contact-form-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="dashboard-eyebrow">
+                                MESSAGE US
+                            </p>
+
+                            <h2>
+                                Send an enquiry
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="contactForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="contactName">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    class="form-control"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactPhone">
+                                    Phone / WhatsApp
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="contactPhone"
+                                    class="form-control"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="contactMessage">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="contactMessage"
+                                class="form-control"
+                                rows="6"
+                                placeholder="What can we help you with?"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Send via WhatsApp
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div>
+
+                <strong>
+                    Bismillah Perfumes
+                </strong>
+
+                <p>
+                    Quality fragrances for every occasion.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/store.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Staff Dashboard | Bismillah Perfumes
+    </title>
+
+    <link rel="icon" href="assets/faicon.png">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/products.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+        <div class="dashboard-brand">
+
+            <div class="dashboard-brand-icon">
+                🧴
+            </div>
+
+            <div>
+
+                <strong>
+                    Bismillah
+                </strong>
+
+                <span>
+                    Staff Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <button
+                class="dashboard-nav-item active"
+                data-section="dashboard"
+                type="button"
+            >
+                <span>📊</span>
+                Dashboard
+            </button>
+
+
+            <button
+                class="dashboard-nav-item"
+                data-section="products"
+                type="button"
+            >
+                <span>🧴</span>
+                Products
+            </button>
+
+
+            <button
+                class="dashboard-nav-item"
+                data-section="categories"
+                type="button"
+            >
+                <span>📁</span>
+                Categories
+            </button>
+
+
+            <button
+                class="dashboard-nav-item"
+                data-section="store"
+                type="button"
+            >
+                <span>🏪</span>
+                Store Information
+            </button>
+
+
+            <button
+                class="dashboard-nav-item"
+                data-section="security"
+                type="button"
+            >
+                <span>🔐</span>
+                Security
+            </button>
+
+        </nav>
+
+
+        <div class="dashboard-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="sidebar-link"
+            >
+                🌐 View Website
+            </a>
+
+
+            <button
+                id="logoutButton"
+                class="sidebar-link sidebar-logout"
+                type="button"
+            >
+                🚪 Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <button
+                id="dashboardMenuButton"
+                class="dashboard-mobile-menu"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div>
+
+                <p class="dashboard-eyebrow">
+                    STAFF PORTAL
+                </p>
+
+                <h1 id="dashboardTitle">
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="dashboard-user">
+
+                <div class="dashboard-user-avatar">
+                    👤
+                </div>
+
+                <div>
+
+                    <strong id="staffEmail">
+                        Staff
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div
+            id="dashboardMessage"
+            class="dashboard-message"
+            hidden
+        ></div>
+
+
+        <!-- DASHBOARD -->
+
+        <section
+            id="section-dashboard"
+            class="dashboard-section"
+        >
+
+            <div class="dashboard-welcome">
+
+                <div>
+
+                    <p class="dashboard-eyebrow">
+                        OVERVIEW
+                    </p>
+
+                    <h2>
+                        Welcome to your dashboard
+                    </h2>
+
+                    <p>
+                        Manage your perfumes, categories and
+                        store information from one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        🧴
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Perfumes
+                        </span>
+
+                        <strong id="statProducts">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        📁
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Categories
+                        </span>
+
+                        <strong id="statCategories">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        📦
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            In Stock
+                        </span>
+
+                        <strong id="statInStock">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        ⚠️
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Out of Stock
+                        </span>
+
+                        <strong id="statOutOfStock">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="panel-kicker">
+                            QUICK ACTIONS
+                        </p>
+
+                        <h3>
+                            Manage your website
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-action-grid">
+
+
+                    <button
+                        class="quick-action"
+                        data-go-section="products"
+                        type="button"
+                    >
+
+                        <span>
+                            🧴
+                        </span>
+
+                        <strong>
+                            Manage Perfumes
+                        </strong>
+
+                        <small>
+                            Add, edit or remove perfumes
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-go-section="categories"
+                        type="button"
+                    >
+
+                        <span>
+                            📁
+                        </span>
+
+                        <strong>
+                            Manage Categories
+                        </strong>
+
+                        <small>
+                            Organise your perfume collection
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-go-section="store"
+                        type="button"
+                    >
+
+                        <span>
+                            🏪
+                        </span>
+
+                        <strong>
+                            Store Information
+                        </strong>
+
+                        <small>
+                            Update contact and business details
+                        </small>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section
+            id="section-products"
+            class="dashboard-section"
+            hidden
+        >
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="dashboard-eyebrow">
+                        CATALOGUE
+                    </p>
+
+                    <h2>
+                        Perfumes
+                    </h2>
+
+                    <p>
+                        Add and manage the perfumes displayed
+                        on your website.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="addProductButton"
+                    class="btn btn-primary"
+                    type="button"
+                >
+                    + Add Perfume
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-panel">
+
+                <div class="admin-toolbar">
+
+                    <div class="search-box">
+
+                        <span>
+                            🔍
+                        </span>
+
+                        <input
+                            type="search"
+                            id="staffProductSearch"
+                            placeholder="Search perfumes..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="staffProductCategory"
+                        class="form-control admin-select"
+                    >
+
+                        <option value="all">
+                            All categories
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        id="staffProductGender"
+                        class="form-control admin-select"
+                    >
+
+                        <option value="all">
+                            All genders
+                        </option>
+
+                        <option value="men">
+                            Men
+                        </option>
+
+                        <option value="women">
+                            Women
+                        </option>
+
+                        <option value="unisex">
+                            Unisex
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="staffProductsTable"
+                    class="admin-products-list"
+                >
+
+                    <div class="dashboard-loading">
+                        Loading perfumes...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section
+            id="section-categories"
+            class="dashboard-section"
+            hidden
+        >
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="dashboard-eyebrow">
+                        CATALOGUE
+                    </p>
+
+                    <h2>
+                        Categories
+                    </h2>
+
+                    <p>
+                        Organise your perfume collection.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="addCategoryButton"
+                    class="btn btn-primary"
+                    type="button"
+                >
+                    + Add Category
+                </button>
+
+            </div>
+
+
+            <div
+                id="staffCategoriesGrid"
+                class="admin-category-grid"
+            >
+
+                <div class="dashboard-loading">
+                    Loading categories...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORE INFORMATION -->
+
+        <section
+            id="section-store"
+            class="dashboard-section"
+            hidden
+        >
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="dashboard-eyebrow">
+                        BUSINESS
+                    </p>
+
+                    <h2>
+                        Store Information
+                    </h2>
+
+                    <p>
+                        Update the information customers see
+                        on the website.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-panel">
+
+                <form id="storeForm">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="storeBusinessName">
+                                Business Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="storeBusinessName"
+                                class="form-control"
+                                value="Bismillah Perfumes"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="storePhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="storePhone"
+                                class="form-control"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="storeWhatsApp">
+                                WhatsApp Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="storeWhatsApp"
+                                class="form-control"
+                                placeholder="e.g. 27821234567"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="storeEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="storeEmail"
+                                class="form-control"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeAbout">
+                            About the Business
+                        </label>
+
+                        <textarea
+                            id="storeAbout"
+                            class="form-control"
+                            rows="5"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeLogo">
+                            Store Logo
+                        </label>
+
+                        <input
+                            type="file"
+                            id="storeLogo"
+                            class="form-control"
+                            accept="image/*"
+                        >
+
+                        <div class="image-preview-wrapper">
+
+                            <img
+                                id="storeLogoPreview"
+                                class="settings-logo-preview"
+                                alt="Logo preview"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeTikTok">
+                            TikTok URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="storeTikTok"
+                            class="form-control"
+                            placeholder="https://www.tiktok.com/@..."
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeAddress">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="storeAddress"
+                            class="form-control"
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Save Changes
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY -->
+
+        <section
+            id="section-security"
+            class="dashboard-section"
+            hidden
+        >
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="dashboard-eyebrow">
+                        ACCOUNT
+                    </p>
+
+                    <h2>
+                        Security
+                    </h2>
+
+                    <p>
+                        Manage your staff account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-panel security-panel">
+
+                <div class="security-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Your account
+                </h3>
+
+                <p id="securityEmail">
+                    —
+                </p>
+
+
+                <button
+                    id="logoutButtonSecurity"
+                    class="btn btn-danger"
+                    type="button"
+                >
+                    Sign Out
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- PRODUCT MODAL -->
+
+<div
+    id="productModal"
+    class="modal-overlay"
+    hidden
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="panel-kicker">
+                    CATALOGUE
+                </p>
+
+                <h2 id="productModalTitle">
+                    Add Perfume
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal="productModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="productForm">
+
+            <input
+                type="hidden"
+                id="productId"
+            >
+
+
+            <div class="form-group">
+
+                <label for="productName">
+                    Perfume Name
+                </label>
+
+                <input
+                    type="text"
+                    id="productName"
+                    class="form-control"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="productDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="productDescription"
+                    class="form-control"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="productPrice">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        class="form-control"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productSize">
+                        Size
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productSize"
+                        class="form-control"
+                        placeholder="e.g. 50ml"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productGender">
+                        Gender
+                    </label>
+
+                    <select
+                        id="productGender"
+                        class="form-control"
+                    >
+
+                        <option value="unisex">
+                            Unisex
+                        </option>
+
+                        <option value="men">
+                            Men
+                        </option>
+
+                        <option value="women">
+                            Women
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="productCategory"
+                        class="form-control"
+                    >
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="productImage">
+                    Perfume Image
+                </label>
+
+                <input
+                    type="file"
+                    id="productImage"
+                    class="form-control"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <div
+                id="productImagePreview"
+                class="modal-image-preview"
+            ></div>
+
+
+            <label class="checkbox-label">
+
+                <input
+                    type="checkbox"
+                    id="productAvailable"
+                    checked
+                >
+
+                <span>
+                    Perfume is in stock
+                </span>
+
+            </label>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    data-close-modal="productModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveProductButton"
+                >
+                    Save Perfume
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- CATEGORY MODAL -->
+
+<div
+    id="categoryModal"
+    class="modal-overlay"
+    hidden
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="panel-kicker">
+                    CATALOGUE
+                </p>
+
+                <h2 id="categoryModalTitle">
+                    Add Category
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal="categoryModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="categoryForm">
+
+            <input
+                type="hidden"
+                id="categoryId"
+            >
+
+
+            <div class="form-group">
+
+                <label for="categoryName">
+                    Category Name
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryName"
+                    class="form-control"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="categoryDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="categoryDescription"
+                    class="form-control"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="categoryImage">
+                    Category Image
+                </label>
+
+                <input
+                    type="file"
+                    id="categoryImage"
+                    class="form-control"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <div
+                id="categoryImagePreview"
+                class="modal-image-preview"
+            ></div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    data-close-modal="categoryModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Save Category
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- SCRIPTS -->
+
+<script type="module" src="js/supabase.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/staff.js"></script>
+<script type="module" src="js/products.js"></script>
+<script type="module" src="js/categories.js"></script>
+<script type="module" src="js/store.js"></script>
+<script type="module" src="js/storage.js"></script>
+
+</body>
+
+</html>
