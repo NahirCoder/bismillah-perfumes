@@ -1,126 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Perfume | Bismillah Perfumes</title>
 
     <link rel="icon" href="assets/faicon.png">
 
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
 <body>
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="container header-inner">
+    <div class="container header-inner">
 
-            <a href="index.html" class="site-logo">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">✦</span>
 
-                <div class="site-logo-icon">
-                    🧴
-                </div>
+            <span class="brand-text">
+                <strong>Bismillah Perfumes</strong>
+                <small>Fragrance & Elegance</small>
+            </span>
+        </a>
 
-                <div>
-                    <strong>Bismillah Perfumes</strong>
-                    <span>Fragrance for every occasion</span>
-                </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="categories.html">Categories</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
+        <div class="header-actions">
+            <a href="login.html" class="admin-button">
+                Admin
             </a>
-
-
-            <nav class="site-nav">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="products.html">
-                    Perfumes
-                </a>
-
-                <a href="categories.html">
-                    Categories
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
-
-            <button
-                type="button"
-                class="mobile-menu-button"
-                id="mobileMenuButton"
-            >
-                ☰
-            </button>
-
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
-    <main>
+<main>
 
-        <section class="product-detail-section">
+    <section class="product-detail-page">
+
+        <div class="container">
+
+            <a
+                href="products.html"
+                class="back-link"
+            >
+                ← Back to perfumes
+            </a>
 
             <div
                 id="productDetail"
-                class="container"
+                class="product-detail"
             >
 
-                <div class="dashboard-loading">
+                <div class="loading-card">
                     Loading perfume...
                 </div>
 
             </div>
 
-        </section>
-
-    </main>
-
-
-    <footer class="site-footer">
-
-        <div class="container footer-inner">
-
-            <div>
-
-                <strong>
-                    Bismillah Perfumes
-                </strong>
-
-                <p>
-                    Quality fragrances for every occasion.
-                </p>
-
-            </div>
-
         </div>
 
-    </footer>
+    </section>
+
+</main>
 
 
-    <script type="module" src="js/supabase.js"></script>
-    <script type="module" src="js/products.js"></script>
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div>
+            <h3>Bismillah Perfumes</h3>
+            <p>
+                Premium fragrances for everyone.
+            </p>
+        </div>
+
+        <div>
+            <h4>Navigation</h4>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="categories.html">Categories</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h4>Admin</h4>
+            <a href="login.html">Staff Login</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © 2026 Bismillah Perfumes.
+        </div>
+    </div>
+
+</footer>
+
+
+<script type="module" src="js/supabase.js"></script>
+<script type="module" src="js/products.js"></script>
 
 </body>
-
 </html>

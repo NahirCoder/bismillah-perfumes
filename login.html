@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Staff Login | Bismillah Perfumes</title>
+    <title>Admin Login | Bismillah Perfumes</title>
 
     <link rel="icon" href="assets/faicon.png">
 
@@ -20,147 +15,166 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/forms.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
 <body class="auth-page">
 
-    <main class="auth-container">
 
-        <div class="auth-card">
+<header class="site-header">
 
-            <a
-                href="index.html"
-                class="auth-brand"
-            >
+    <div class="container header-inner">
 
-                <div class="auth-brand-icon">
-                    🧴
-                </div>
+        <a href="index.html" class="brand">
+            <span class="brand-icon">✦</span>
 
-                <div>
+            <span class="brand-text">
+                <strong>Bismillah Perfumes</strong>
+                <small>Admin Portal</small>
+            </span>
+        </a>
 
-                    <strong>
-                        Bismillah Perfumes
-                    </strong>
+        <a
+            href="index.html"
+            class="admin-button"
+        >
+            ← Website
+        </a>
 
-                    <span>
-                        Staff Portal
-                    </span>
+    </div>
 
-                </div>
-
-            </a>
+</header>
 
 
-            <div class="auth-heading">
+<main class="auth-container">
 
-                <h1>
-                    Welcome back
-                </h1>
+    <div class="auth-card">
 
-                <p>
-                    Sign in to manage your perfume store.
-                </p>
+        <div class="auth-brand">
 
+            <div class="auth-brand-icon">
+                ✦
             </div>
 
+            <div>
+                <strong>
+                    Bismillah Perfumes
+                </strong>
 
-            <div
-                id="loginMessage"
-                class="form-message"
-                hidden
-            ></div>
-
-
-            <form
-                id="loginForm"
-                class="auth-form"
-            >
-
-                <div class="form-group">
-
-                    <label for="email">
-                        Email address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-control"
-                        placeholder="Enter your email"
-                        autocomplete="email"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <div class="form-label-row">
-
-                        <label for="password">
-                            Password
-                        </label>
-
-                    </div>
-
-
-                    <div class="password-field">
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            class="form-control"
-                            placeholder="Enter your password"
-                            autocomplete="current-password"
-                            required
-                        >
-
-                        <button
-                            type="button"
-                            id="showPassword"
-                            class="password-toggle"
-                        >
-                            Show
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    id="loginButton"
-                    class="btn btn-primary auth-submit"
-                >
-                    Login
-                </button>
-
-            </form>
-
-
-            <div class="auth-footer">
-
-                <a href="index.html">
-                    ← Back to website
-                </a>
-
+                <span>
+                    Staff Portal
+                </span>
             </div>
 
         </div>
 
-    </main>
+
+        <div class="auth-heading">
+
+            <span class="section-label">
+                ADMINISTRATION
+            </span>
+
+            <h1>
+                Welcome back
+            </h1>
+
+            <p>
+                Sign in to manage your perfume catalogue.
+            </p>
+
+        </div>
 
 
-    <script type="module" src="js/supabase.js"></script>
-    <script type="module" src="js/auth.js"></script>
+        <div
+            id="loginMessage"
+            class="form-message"
+            hidden
+        ></div>
+
+
+        <form
+            id="loginForm"
+            class="auth-form"
+        >
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-field">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="showPassword"
+                        class="password-toggle"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="loginButton"
+                class="btn btn-primary auth-submit"
+            >
+                Login to Dashboard
+            </button>
+
+        </form>
+
+
+        <div class="auth-footer">
+
+            <a href="index.html">
+                ← Back to Bismillah Perfumes
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script type="module" src="js/supabase.js"></script>
+<script type="module" src="js/auth.js"></script>
 
 </body>
-
 </html>

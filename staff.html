@@ -10,9 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Staff Dashboard | Bismillah Perfumes
-    </title>
+    <title>Admin Dashboard | Bismillah Perfumes</title>
 
     <link rel="icon" href="assets/faicon.png">
 
@@ -24,10 +22,13 @@
     <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
+
 <body class="dashboard-page">
+
 
 <div class="dashboard-layout">
 
@@ -42,19 +43,12 @@
         <div class="dashboard-brand">
 
             <div class="dashboard-brand-icon">
-                🧴
+                ✦
             </div>
 
             <div>
-
-                <strong>
-                    Bismillah
-                </strong>
-
-                <span>
-                    Staff Portal
-                </span>
-
+                <strong>Bismillah</strong>
+                <span>Admin Portal</span>
             </div>
 
         </div>
@@ -65,7 +59,6 @@
             <button
                 class="dashboard-nav-item active"
                 data-section="dashboard"
-                type="button"
             >
                 <span>📊</span>
                 Dashboard
@@ -75,7 +68,6 @@
             <button
                 class="dashboard-nav-item"
                 data-section="products"
-                type="button"
             >
                 <span>🧴</span>
                 Products
@@ -85,7 +77,6 @@
             <button
                 class="dashboard-nav-item"
                 data-section="categories"
-                type="button"
             >
                 <span>📁</span>
                 Categories
@@ -95,17 +86,15 @@
             <button
                 class="dashboard-nav-item"
                 data-section="store"
-                type="button"
             >
-                <span>🏪</span>
-                Store Information
+                <span>⚙️</span>
+                Business Settings
             </button>
 
 
             <button
                 class="dashboard-nav-item"
                 data-section="security"
-                type="button"
             >
                 <span>🔐</span>
                 Security
@@ -127,7 +116,6 @@
             <button
                 id="logoutButton"
                 class="sidebar-link sidebar-logout"
-                type="button"
             >
                 🚪 Sign Out
             </button>
@@ -141,8 +129,6 @@
 
     <main class="dashboard-main">
 
-
-        <!-- TOPBAR -->
 
         <header class="dashboard-topbar">
 
@@ -158,7 +144,7 @@
             <div>
 
                 <p class="dashboard-eyebrow">
-                    STAFF PORTAL
+                    BISMILLAH PERFUMES
                 </p>
 
                 <h1 id="dashboardTitle">
@@ -177,7 +163,7 @@
                 <div>
 
                     <strong id="staffEmail">
-                        Staff
+                        Admin
                     </strong>
 
                     <span>
@@ -219,7 +205,7 @@
 
                     <p>
                         Manage your perfumes, categories and
-                        store information from one place.
+                        business information from one place.
                     </p>
 
                 </div>
@@ -239,7 +225,7 @@
                     <div>
 
                         <span class="stat-label">
-                            Perfumes
+                            Products
                         </span>
 
                         <strong id="statProducts">
@@ -275,7 +261,7 @@
                 <div class="stat-card">
 
                     <span class="stat-icon">
-                        📦
+                        ✓
                     </span>
 
                     <div>
@@ -313,7 +299,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -328,7 +313,7 @@
                         </p>
 
                         <h3>
-                            Manage your website
+                            Manage your store
                         </h3>
 
                     </div>
@@ -338,69 +323,40 @@
 
                 <div class="quick-action-grid">
 
-
                     <button
                         class="quick-action"
                         data-go-section="products"
-                        type="button"
                     >
-
-                        <span>
-                            🧴
-                        </span>
-
-                        <strong>
-                            Manage Perfumes
-                        </strong>
-
+                        <span>🧴</span>
+                        <strong>Manage Products</strong>
                         <small>
                             Add, edit or remove perfumes
                         </small>
-
                     </button>
 
 
                     <button
                         class="quick-action"
                         data-go-section="categories"
-                        type="button"
                     >
-
-                        <span>
-                            📁
-                        </span>
-
-                        <strong>
-                            Manage Categories
-                        </strong>
-
+                        <span>📁</span>
+                        <strong>Manage Categories</strong>
                         <small>
-                            Organise your perfume collection
+                            Organise your perfumes
                         </small>
-
                     </button>
 
 
                     <button
                         class="quick-action"
                         data-go-section="store"
-                        type="button"
                     >
-
-                        <span>
-                            🏪
-                        </span>
-
-                        <strong>
-                            Store Information
-                        </strong>
-
+                        <span>⚙️</span>
+                        <strong>Business Settings</strong>
                         <small>
-                            Update contact and business details
+                            Update business information
                         </small>
-
                     </button>
-
 
                 </div>
 
@@ -426,12 +382,11 @@
                     </p>
 
                     <h2>
-                        Perfumes
+                        Products
                     </h2>
 
                     <p>
-                        Add and manage the perfumes displayed
-                        on your website.
+                        Manage all perfumes available on your website.
                     </p>
 
                 </div>
@@ -440,7 +395,6 @@
                 <button
                     id="addProductButton"
                     class="btn btn-primary"
-                    type="button"
                 >
                     + Add Perfume
                 </button>
@@ -454,9 +408,7 @@
 
                     <div class="search-box">
 
-                        <span>
-                            🔍
-                        </span>
+                        <span>🔍</span>
 
                         <input
                             type="search"
@@ -478,30 +430,6 @@
 
                     </select>
 
-
-                    <select
-                        id="staffProductGender"
-                        class="form-control admin-select"
-                    >
-
-                        <option value="all">
-                            All genders
-                        </option>
-
-                        <option value="men">
-                            Men
-                        </option>
-
-                        <option value="women">
-                            Women
-                        </option>
-
-                        <option value="unisex">
-                            Unisex
-                        </option>
-
-                    </select>
-
                 </div>
 
 
@@ -511,7 +439,7 @@
                 >
 
                     <div class="dashboard-loading">
-                        Loading perfumes...
+                        Loading products...
                     </div>
 
                 </div>
@@ -542,7 +470,7 @@
                     </h2>
 
                     <p>
-                        Organise your perfume collection.
+                        Manage perfume categories.
                     </p>
 
                 </div>
@@ -551,7 +479,6 @@
                 <button
                     id="addCategoryButton"
                     class="btn btn-primary"
-                    type="button"
                 >
                     + Add Category
                 </button>
@@ -573,7 +500,7 @@
         </section>
 
 
-        <!-- STORE INFORMATION -->
+        <!-- STORE SETTINGS -->
 
         <section
             id="section-store"
@@ -590,12 +517,11 @@
                     </p>
 
                     <h2>
-                        Store Information
+                        Business Settings
                     </h2>
 
                     <p>
-                        Update the information customers see
-                        on the website.
+                        Update information shown on your website.
                     </p>
 
                 </div>
@@ -610,7 +536,6 @@
 
                     <div class="form-grid">
 
-
                         <div class="form-group">
 
                             <label for="storeBusinessName">
@@ -621,7 +546,6 @@
                                 type="text"
                                 id="storeBusinessName"
                                 class="form-control"
-                                value="Bismillah Perfumes"
                             >
 
                         </div>
@@ -630,7 +554,7 @@
                         <div class="form-group">
 
                             <label for="storePhone">
-                                Phone Number
+                                Phone
                             </label>
 
                             <input
@@ -645,14 +569,13 @@
                         <div class="form-group">
 
                             <label for="storeWhatsApp">
-                                WhatsApp Number
+                                WhatsApp
                             </label>
 
                             <input
                                 type="tel"
                                 id="storeWhatsApp"
                                 class="form-control"
-                                placeholder="e.g. 27821234567"
                             >
 
                         </div>
@@ -660,18 +583,33 @@
 
                         <div class="form-group">
 
-                            <label for="storeEmail">
-                                Email Address
+                            <label for="storeTikTok">
+                                TikTok URL
                             </label>
 
                             <input
-                                type="email"
-                                id="storeEmail"
+                                type="url"
+                                id="storeTikTok"
                                 class="form-control"
+                                placeholder="https://www.tiktok.com/@..."
                             >
 
                         </div>
 
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="storeEmail"
+                            class="form-control"
+                        >
 
                     </div>
 
@@ -693,8 +631,23 @@
 
                     <div class="form-group">
 
+                        <label for="storeAddress">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="storeAddress"
+                            class="form-control"
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
                         <label for="storeLogo">
-                            Store Logo
+                            Business Logo
                         </label>
 
                         <input
@@ -717,37 +670,6 @@
                     </div>
 
 
-                    <div class="form-group">
-
-                        <label for="storeTikTok">
-                            TikTok URL
-                        </label>
-
-                        <input
-                            type="url"
-                            id="storeTikTok"
-                            class="form-control"
-                            placeholder="https://www.tiktok.com/@..."
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="storeAddress">
-                            Address
-                        </label>
-
-                        <textarea
-                            id="storeAddress"
-                            class="form-control"
-                            rows="3"
-                        ></textarea>
-
-                    </div>
-
-
                     <div class="form-actions">
 
                         <button
@@ -758,7 +680,6 @@
                         </button>
 
                     </div>
-
 
                 </form>
 
@@ -788,7 +709,7 @@
                     </h2>
 
                     <p>
-                        Manage your staff account.
+                        Manage your administrator session.
                     </p>
 
                 </div>
@@ -803,18 +724,16 @@
                 </div>
 
                 <h3>
-                    Your account
+                    Administrator account
                 </h3>
 
                 <p id="securityEmail">
                     —
                 </p>
 
-
                 <button
                     id="logoutButtonSecurity"
                     class="btn btn-danger"
-                    type="button"
                 >
                     Sign Out
                 </button>
@@ -822,7 +741,6 @@
             </div>
 
         </section>
-
 
     </main>
 
@@ -852,7 +770,6 @@
                 </h2>
 
             </div>
-
 
             <button
                 type="button"
@@ -927,22 +844,6 @@
 
                 <div class="form-group">
 
-                    <label for="productSize">
-                        Size
-                    </label>
-
-                    <input
-                        type="text"
-                        id="productSize"
-                        class="form-control"
-                        placeholder="e.g. 50ml"
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
                     <label for="productGender">
                         Gender
                     </label>
@@ -971,6 +872,22 @@
 
                 <div class="form-group">
 
+                    <label for="productSize">
+                        Size
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productSize"
+                        class="form-control"
+                        placeholder="e.g. 100ml"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
                     <label for="productCategory">
                         Category
                     </label>
@@ -978,12 +895,9 @@
                     <select
                         id="productCategory"
                         class="form-control"
-                    >
-
-                    </select>
+                    ></select>
 
                 </div>
-
 
             </div>
 
@@ -1177,8 +1091,6 @@
 </div>
 
 
-<!-- SCRIPTS -->
-
 <script type="module" src="js/supabase.js"></script>
 <script type="module" src="js/auth.js"></script>
 <script type="module" src="js/staff.js"></script>
@@ -1188,5 +1100,4 @@
 <script type="module" src="js/storage.js"></script>
 
 </body>
-
 </html>

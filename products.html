@@ -1,216 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Browse the Bismillah Perfumes collection."
-    >
-
-    <title>Perfumes | Bismillah Perfumes</title>
+    <title>Shop Perfumes | Bismillah Perfumes</title>
 
     <link rel="icon" href="assets/faicon.png">
 
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
 <body>
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="container header-inner">
+    <div class="container header-inner">
 
-            <a href="index.html" class="site-logo">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">✦</span>
 
-                <div class="site-logo-icon">
-                    🧴
-                </div>
+            <span class="brand-text">
+                <strong>Bismillah Perfumes</strong>
+                <small>Fragrance & Elegance</small>
+            </span>
+        </a>
 
-                <div>
-                    <strong>Bismillah Perfumes</strong>
-                    <span>Fragrance for every occasion</span>
-                </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Shop</a>
+            <a href="categories.html">Categories</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
+        <div class="header-actions">
+            <a href="login.html" class="admin-button">
+                Admin
             </a>
+        </div>
+
+    </div>
+
+</header>
 
 
-            <nav class="site-nav">
+<main>
 
-                <a href="index.html">
-                    Home
-                </a>
+    <section class="page-hero">
 
-                <a
-                    href="products.html"
-                    class="active"
+        <div class="container">
+
+            <span class="section-label">
+                OUR COLLECTION
+            </span>
+
+            <h1>
+                Shop our fragrances
+            </h1>
+
+            <p>
+                Browse our collection of carefully selected
+                perfumes.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="products-page">
+
+        <div class="container">
+
+            <div class="catalogue-toolbar">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="Search perfumes..."
+                    >
+
+                </div>
+
+                <select
+                    id="categoryFilter"
+                    class="form-control"
                 >
-                    Perfumes
-                </a>
 
-                <a href="categories.html">
-                    Categories
-                </a>
+                    <option value="all">
+                        All categories
+                    </option>
 
-                <a href="contact.html">
-                    Contact
-                </a>
+                </select>
 
-            </nav>
+            </div>
 
 
-            <button
-                type="button"
-                class="mobile-menu-button"
-                id="mobileMenuButton"
+            <div
+                id="productsGrid"
+                class="product-grid"
             >
-                ☰
-            </button>
 
-        </div>
-
-    </header>
-
-
-    <main>
-
-        <section class="page-header">
-
-            <div class="container">
-
-                <p class="dashboard-eyebrow">
-                    COLLECTION
-                </p>
-
-                <h1>
-                    Our Perfumes
-                </h1>
-
-                <p>
-                    Discover fragrances selected for every style,
-                    personality and occasion.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <section class="products-section">
-
-            <div class="container">
-
-                <div class="products-toolbar">
-
-                    <div class="search-box">
-
-                        <span>
-                            🔍
-                        </span>
-
-                        <input
-                            type="search"
-                            id="productSearch"
-                            placeholder="Search perfumes..."
-                        >
-
-                    </div>
-
-
-                    <select
-                        id="productCategory"
-                        class="form-control"
-                    >
-
-                        <option value="all">
-                            All categories
-                        </option>
-
-                    </select>
-
-
-                    <select
-                        id="productGender"
-                        class="form-control"
-                    >
-
-                        <option value="all">
-                            All genders
-                        </option>
-
-                        <option value="men">
-                            Men
-                        </option>
-
-                        <option value="women">
-                            Women
-                        </option>
-
-                        <option value="unisex">
-                            Unisex
-                        </option>
-
-                    </select>
-
+                <div class="loading-card">
+                    Loading perfumes...
                 </div>
-
-
-                <div
-                    id="productsGrid"
-                    class="product-grid"
-                >
-
-                    <div class="dashboard-loading">
-                        Loading perfumes...
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer class="site-footer">
-
-        <div class="container footer-inner">
-
-            <div>
-
-                <strong>
-                    Bismillah Perfumes
-                </strong>
-
-                <p>
-                    Quality fragrances for every occasion.
-                </p>
 
             </div>
 
         </div>
 
-    </footer>
+    </section>
+
+</main>
 
 
-    <script type="module" src="js/supabase.js"></script>
-    <script type="module" src="js/products.js"></script>
-    <script type="module" src="js/categories.js"></script>
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div>
+            <h3>Bismillah Perfumes</h3>
+            <p>
+                Premium fragrances for every occasion.
+            </p>
+        </div>
+
+        <div>
+            <h4>Navigation</h4>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="categories.html">Categories</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h4>Admin</h4>
+            <a href="login.html">Staff Login</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © 2026 Bismillah Perfumes.
+        </div>
+    </div>
+
+</footer>
+
+
+<script type="module" src="js/supabase.js"></script>
+<script type="module" src="js/products.js"></script>
+<script type="module" src="js/categories.js"></script>
 
 </body>
-
 </html>
