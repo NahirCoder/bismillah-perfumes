@@ -1,173 +1,98 @@
 /* =========================================================
-   VICTORIA SUPERMARKET
-   DESIGN VARIABLES
+   BISMILLAH PERFUMES — VARIABLES
    ========================================================= */
 
 :root {
 
     /* -----------------------------------------------------
-       BRAND COLORS
+       COLOURS
        ----------------------------------------------------- */
 
-    --primary: #087f5b;
-    --primary-dark: #056044;
-    --primary-light: #e8f7f1;
+    --black: #0b0b0b;
+    --black-soft: #121212;
+    --black-light: #1b1b1b;
 
-    --accent: #f4b400;
-    --accent-dark: #d99d00;
-    --accent-light: #fff6d8;
+    --ivory: #f8f5ef;
+    --cream: #f1ede5;
+    --white: #ffffff;
 
-    --danger: #dc3545;
-    --danger-light: #fdebed;
+    --gold: #c6a15b;
+    --gold-light: #dfc17b;
+    --gold-dark: #9c783c;
 
-    --success: #198754;
-    --success-light: #e9f7ef;
+    --text: #171717;
+    --text-soft: #666666;
+    --text-muted: #8b8b8b;
 
-    --warning: #f59f00;
-    --warning-light: #fff4d6;
+    --border: #e5e0d7;
+    --border-dark: #2a2a2a;
+
+    --success: #287a4d;
+    --danger: #b83b3b;
+    --warning: #b88931;
 
 
     /* -----------------------------------------------------
        BACKGROUNDS
        ----------------------------------------------------- */
 
-    --background: #f7f9f8;
-    --surface: #ffffff;
-    --surface-soft: #f1f5f3;
-    --surface-dark: #17201d;
-
-
-    /* -----------------------------------------------------
-       TEXT
-       ----------------------------------------------------- */
-
-    --text: #17201d;
-    --text-secondary: #46524d;
-    --text-light: #74817b;
-    --text-white: #ffffff;
-
-
-    /* -----------------------------------------------------
-       BORDERS
-       ----------------------------------------------------- */
-
-    --border: #dfe6e2;
-    --border-light: #edf1ef;
-    --border-dark: #c8d2cd;
+    --bg: var(--ivory);
+    --surface: var(--white);
+    --surface-dark: var(--black-soft);
 
 
     /* -----------------------------------------------------
        TYPOGRAPHY
        ----------------------------------------------------- */
 
-    --font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
+    --font-body:
+        Arial,
+        Helvetica,
         sans-serif;
 
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 2rem;
-    --font-size-4xl: 2.75rem;
-    --font-size-5xl: 3.5rem;
-
-
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
-
-
-    --line-height-tight: 1.15;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.7;
+    --font-heading:
+        Georgia,
+        "Times New Roman",
+        serif;
 
 
     /* -----------------------------------------------------
-       SPACING
+       SIZING
        ----------------------------------------------------- */
 
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
+    --container: 1240px;
 
-
-    /* -----------------------------------------------------
-       BORDER RADIUS
-       ----------------------------------------------------- */
-
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
-    --radius-full: 9999px;
-
-
-    /* -----------------------------------------------------
-       SHADOWS
-       ----------------------------------------------------- */
-
-    --shadow-xs:
-        0 1px 2px rgba(0, 0, 0, 0.04);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
 
     --shadow-sm:
-        0 2px 8px rgba(0, 0, 0, 0.06);
+        0 3px 12px rgba(0, 0, 0, 0.06);
 
     --shadow-md:
-        0 8px 24px rgba(0, 0, 0, 0.08);
+        0 10px 30px rgba(0, 0, 0, 0.09);
 
     --shadow-lg:
-        0 16px 40px rgba(0, 0, 0, 0.12);
+        0 20px 55px rgba(0, 0, 0, 0.14);
 
 
     /* -----------------------------------------------------
        TRANSITIONS
        ----------------------------------------------------- */
 
-    --transition-fast:
-        150ms ease;
-
-    --transition-normal:
-        250ms ease;
+    --transition:
+        0.25s ease;
 
     --transition-slow:
-        400ms ease;
-
-
-    /* -----------------------------------------------------
-       LAYOUT
-       ----------------------------------------------------- */
-
-    --container-width: 1200px;
-
-    --header-height: 76px;
+        0.45s ease;
 
 
     /* -----------------------------------------------------
        Z-INDEX
        ----------------------------------------------------- */
 
-    --z-dropdown: 1000;
-    --z-sticky: 1100;
-    --z-modal: 1200;
-    --z-toast: 1300;
-
+    --z-header: 1000;
+    --z-overlay: 2000;
+    --z-modal: 3000;
 }

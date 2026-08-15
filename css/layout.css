@@ -1,121 +1,87 @@
 /* =========================================================
-   VICTORIA SUPERMARKET
-   LAYOUT
+   BISMILLAH PERFUMES — LAYOUT
    ========================================================= */
 
-
-/* ---------------------------------------------------------
-   CONTAINER
-   --------------------------------------------------------- */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+}
 
 .container {
     width: min(
-        calc(100% - 2rem),
-        var(--container-width)
+        calc(100% - 40px),
+        var(--container)
     );
 
     margin-inline: auto;
 }
 
-
-/* ---------------------------------------------------------
-   MAIN
-   --------------------------------------------------------- */
-
 main {
-    min-height: calc(100vh - var(--header-height));
+    min-height: 60vh;
 }
-
-
-/* ---------------------------------------------------------
-   SECTIONS
-   --------------------------------------------------------- */
 
 .section {
-    padding: var(--space-20) 0;
+    padding: 90px 0;
 }
-
 
 .section-sm {
-    padding: var(--space-12) 0;
+    padding: 55px 0;
 }
 
+.section-dark {
+    background: var(--black);
+    color: var(--white);
+}
 
-.section-lg {
-    padding: var(--space-24) 0;
+.section-cream {
+    background: var(--cream);
 }
 
 
 /* ---------------------------------------------------------
-   SECTION HEADER
+   SECTION HEADINGS
    --------------------------------------------------------- */
 
-.section-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-8);
-
-    margin-bottom: var(--space-10);
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
 }
 
-
-.section-title {
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-extrabold);
-    letter-spacing: -0.025em;
+.section-heading .eyebrow {
+    margin-bottom: 12px;
 }
 
-
-.section-subtitle {
-    max-width: 650px;
-    margin-top: var(--space-3);
-
-    color: var(--text-light);
-
-    font-size: var(--font-size-md);
-    line-height: var(--line-height-relaxed);
+.section-heading h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
-
-.section-link {
-    flex-shrink: 0;
-
-    color: var(--primary);
-
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-
-    transition:
-        color var(--transition-fast),
-        transform var(--transition-fast);
-}
-
-
-.section-link:hover {
-    color: var(--primary-dark);
+.section-heading p {
+    margin-top: 15px;
+    color: var(--text-soft);
 }
 
 
 /* ---------------------------------------------------------
-   GRID SYSTEMS
+   GRID
    --------------------------------------------------------- */
 
 .grid {
     display: grid;
-    gap: var(--space-6);
+    gap: 24px;
 }
-
 
 .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-
 .grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-
 
 .grid-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -123,336 +89,37 @@ main {
 
 
 /* ---------------------------------------------------------
-   CATEGORY GRID
+   EMPTY / LOADING
    --------------------------------------------------------- */
 
-.category-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: var(--space-5);
+.loading,
+.empty-state,
+.dashboard-loading {
+    padding: 50px 25px;
+    text-align: center;
+    color: var(--text-muted);
 }
 
 
 /* ---------------------------------------------------------
-   PRODUCT GRID
+   PAGE HEADER
    --------------------------------------------------------- */
 
-.product-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: var(--space-6);
-}
-
-
-/* ---------------------------------------------------------
-   PROMOTION GRID
-   --------------------------------------------------------- */
-
-.promotion-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: var(--space-6);
-}
-
-
-/* ---------------------------------------------------------
-   TWO COLUMN LAYOUT
-   --------------------------------------------------------- */
-
-.two-column {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    gap: var(--space-10);
-
-    align-items: center;
-}
-
-
-/* ---------------------------------------------------------
-   CONTACT GRID
-   --------------------------------------------------------- */
-
-.contact-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: var(--space-6);
-}
-
-
-/* ---------------------------------------------------------
-   CATALOGUE TOOLBAR
-   --------------------------------------------------------- */
-
-.catalogue-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-
-    margin-bottom: var(--space-6);
-}
-
-
-/* ---------------------------------------------------------
-   FILTER ROW
-   --------------------------------------------------------- */
-
-.filter-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: var(--space-2);
-
-    margin-bottom: var(--space-8);
-}
-
-
-/* ---------------------------------------------------------
-   MAP
-   --------------------------------------------------------- */
-
-.map-container {
-    width: 100%;
-    overflow: hidden;
-
-    min-height: 400px;
-
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-
-    background: var(--surface);
-
-    box-shadow: var(--shadow-sm);
-}
-
-
-.map-container iframe {
-    display: block;
-
-    width: 100%;
-    min-height: 400px;
-
-    border: 0;
-}
-
-
-/* ---------------------------------------------------------
-   FOOTER
-   --------------------------------------------------------- */
-
-.site-footer {
-    margin-top: var(--space-20);
-
-    padding: var(--space-16) 0 var(--space-8);
-
-    background: var(--surface-dark);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-
-.footer-grid {
-    display: grid;
-
-    grid-template-columns:
-        2fr
-        1fr
-        1fr
-        1fr;
-
-    gap: var(--space-10);
-
-    padding-bottom: var(--space-12);
-}
-
-
-.footer-brand strong {
-    display: block;
-
-    margin-bottom: var(--space-3);
-
-    color: var(--text-white);
-
-    font-size: var(--font-size-xl);
-}
-
-
-.footer-brand p {
-    max-width: 350px;
-
-    color: rgba(255, 255, 255, 0.65);
-
-    line-height: var(--line-height-relaxed);
-}
-
-
-.footer-column {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
-
-.footer-column h3 {
-    margin-bottom: var(--space-2);
-
-    color: var(--text-white);
-
-    font-size: var(--font-size-sm);
-}
-
-
-.footer-column a {
-    color: rgba(255, 255, 255, 0.65);
-
-    font-size: var(--font-size-sm);
-
-    transition:
-        color var(--transition-fast);
-}
-
-
-.footer-column a:hover {
-    color: var(--text-white);
-}
-
-
-.footer-bottom {
-    padding-top: var(--space-6);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-    color: rgba(255, 255, 255, 0.5);
-
-    font-size: var(--font-size-sm);
-
+.page-header {
+    padding: 70px 0;
+    background: var(--black);
+    color: var(--white);
     text-align: center;
 }
 
-
-.footer-bottom a {
-    color: rgba(255, 255, 255, 0.7);
+.page-header h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 500;
 }
 
-
-.footer-bottom a:hover {
-    color: var(--text-white);
-}
-
-
-/* ---------------------------------------------------------
-   RESPONSIVE BASE
-   --------------------------------------------------------- */
-
-@media (max-width: 1000px) {
-
-    .product-grid {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-
-    .category-grid {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-
-    .footer-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-
-@media (max-width: 750px) {
-
-    .section {
-        padding: var(--space-16) 0;
-    }
-
-
-    .section-header {
-        align-items: flex-start;
-        flex-direction: column;
-
-        margin-bottom: var(--space-8);
-    }
-
-
-    .section-title {
-        font-size: var(--font-size-2xl);
-    }
-
-
-    .product-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: var(--space-4);
-    }
-
-
-    .category-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-
-    .promotion-grid,
-    .contact-grid,
-    .two-column {
-        grid-template-columns: 1fr;
-    }
-
-
-    .catalogue-toolbar {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .container {
-        width: min(
-            calc(100% - 1.25rem),
-            var(--container-width)
-        );
-    }
-
-
-    .product-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .category-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
+.page-header p {
+    max-width: 600px;
+    margin: 16px auto 0;
+    color: #bdbdbd;
 }
