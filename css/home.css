@@ -403,3 +403,54 @@
         align-items: center;
     }
 }
+/* =========================================================
+   LOCATION BUTTON
+   ========================================================= */
+
+.location-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 32px;
+}
+
+.location-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 14px 26px;
+
+    background: var(--black);
+    color: var(--gold-light);
+
+    border: 1px solid var(--gold);
+
+    border-radius: 6px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.location-button:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+}
