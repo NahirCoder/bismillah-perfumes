@@ -3,12 +3,8 @@
    BISMILLAH PERFUMES
    ========================================================= */
 
-import {
-    requireLogin
-} from "./auth.js";
-
+import { requireLogin } from "./auth.js";
 import { supabase } from "./supabase.js";
-
 
 let categories = [];
 
@@ -18,14 +14,12 @@ let categories = [];
    ========================================================= */
 
 function escapeHTML(value) {
-
     return String(value ?? "")
         .replaceAll("&", "&amp;")
         .replaceAll("<", "&lt;")
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
-
 }
 
 
@@ -35,31 +29,19 @@ function escapeHTML(value) {
 
 async function fetchCategories() {
 
-    const {
-        data,
-        error
-    } =
-        await supabase
-            .from("categories")
-            .select("*")
-            .eq(
-                "archived",
-                false
-            )
-            .order(
-                "display_order",
-                {
-                    ascending: true
-                }
-            );
+    const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .eq("archived", false)
+        .order("display_order", {
+            ascending: true
+        });
 
-
-    if (error)
+    if (error) {
         throw error;
-
+    }
 
     return data || [];
-
 }
 
 
@@ -70,286 +52,215 @@ async function fetchCategories() {
 async function loadStaffCategories() {
 
     const container =
-        document.getElementById(
-            "staffCategoriesGrid"
-        );
-
+        document.getElementById("staffCategoriesGrid");
 
     if (!container) return;
 
-
-    container.innerHTML =
-        `<div class="dashboard-loading">
+    container.innerHTML = `
+        <div class="dashboard-loading">
             Loading categories...
-        </div>`;
-
+        </div>
+    `;
 
     try {
 
-        categories =
-            await fetchCategories();
-
+        categories = await fetchCategories();
 
         renderStaffCategories();
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
 
-
-        container.innerHTML =
-            `<div class="dashboard-loading">
-                ${escapeHTML(
-                    error.message
-                )}
-            </div>`;
-
+        container.innerHTML = `
+            <div class="dashboard-loading">
+                ${escapeHTML(error.message)}
+            </div>
+        `;
     }
-
 }
 
 
 /* =========================================================
-   RENDER
+   STAFF RENDER
    ========================================================= */
 
 function renderStaffCategories() {
 
     const container =
-        document.getElementById(
-            "staffCategoriesGrid"
-        );
-
+        document.getElementById("staffCategoriesGrid");
 
     if (!container) return;
 
-
     if (!categories.length) {
 
-        container.innerHTML =
-            `<div class="dashboard-loading">
+        container.innerHTML = `
+            <div class="dashboard-loading">
                 No categories yet.
-            </div>`;
+            </div>
+        `;
 
         return;
-
     }
 
+    container.innerHTML = categories.map(category => {
 
-    container.innerHTML =
-        categories.map(
-            category => {
+        const image = category.image_url || "";
 
-                const image =
-                    category.image_url ||
-                    "";
+        return `
+            <article class="admin-category-card">
 
-
-                return `
-
-                    <article
-                        class="admin-category-card"
-                    >
-
-                        ${
-                            image
-                                ? `
-                                    <img
-                                        src="${escapeHTML(image)}"
-                                        alt="${escapeHTML(category.name)}"
-                                    >
-                                  `
-                                : `
-                                    <div class="admin-category-image">
-                                        🌸
-                                    </div>
-                                  `
-                        }
-
-                        <div class="admin-category-body">
-
-                            <h3>
-                                ${escapeHTML(
-                                    category.name
-                                )}
-                            </h3>
-
-                            <p>
-                                ${escapeHTML(
-                                    category.description
-                                )}
-                            </p>
-
-                            <div class="admin-category-actions">
-
-                                <button
-                                    class="btn btn-outline btn-small"
-                                    data-edit-category="${category.id}"
-                                >
-                                    Edit
-                                </button>
-
-                                <button
-                                    class="btn btn-danger btn-small"
-                                    data-delete-category="${category.id}"
-                                >
-                                    Delete
-                                </button>
-
+                ${
+                    image
+                        ? `
+                            <img
+                                src="${escapeHTML(image)}"
+                                alt="${escapeHTML(category.name)}"
+                            >
+                        `
+                        : `
+                            <div class="admin-category-image">
+                                🌸
                             </div>
-
-                        </div>
-
-                    </article>
-
-                `;
-
-            }
-        ).join("");
-
-
-    container
-        .querySelectorAll(
-            "[data-edit-category]"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const category =
-                        categories.find(
-                            item =>
-                                String(item.id) ===
-                                String(
-                                    button.dataset.editCategory
-                                )
-                        );
-
-
-                    if (category) {
-
-                        openCategoryModal(
-                            category
-                        );
-
-                    }
-
+                        `
                 }
-            );
 
-        });
+                <div class="admin-category-body">
 
+                    <h3>
+                        ${escapeHTML(category.name)}
+                    </h3>
+
+                    <p>
+                        ${escapeHTML(category.description)}
+                    </p>
+
+                    <div class="admin-category-actions">
+
+                        <button
+                            class="btn btn-outline btn-small"
+                            data-edit-category="${category.id}"
+                        >
+                            Edit
+                        </button>
+
+                        <button
+                            class="btn btn-danger btn-small"
+                            data-delete-category="${category.id}"
+                        >
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+        `;
+
+    }).join("");
+
+
+    /* EDIT */
 
     container
-        .querySelectorAll(
-            "[data-delete-category]"
-        )
+        .querySelectorAll("[data-edit-category]")
         .forEach(button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+            button.addEventListener("click", () => {
 
-                    deleteCategory(
-                        button.dataset.deleteCategory
+                const category =
+                    categories.find(
+                        item =>
+                            String(item.id) ===
+                            String(button.dataset.editCategory)
                     );
 
+                if (category) {
+                    openCategoryModal(category);
                 }
-            );
+
+            });
 
         });
 
+
+    /* DELETE */
+
+    container
+        .querySelectorAll("[data-delete-category]")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                deleteCategory(
+                    button.dataset.deleteCategory
+                );
+
+            });
+
+        });
 }
 
 
 /* =========================================================
-   MODAL
+   CATEGORY MODAL
    ========================================================= */
 
-function openCategoryModal(
-    category = null
-) {
+function openCategoryModal(category = null) {
 
     const modal =
-        document.getElementById(
-            "categoryModal"
-        );
-
+        document.getElementById("categoryModal");
 
     if (!modal) return;
 
-
     document
-        .getElementById(
-            "categoryForm"
-        )
+        .getElementById("categoryForm")
         ?.reset();
 
-
     const preview =
-        document.getElementById(
-            "categoryImagePreview"
-        );
+        document.getElementById("categoryImagePreview");
 
-
-    if (preview)
+    if (preview) {
         preview.innerHTML = "";
+    }
 
 
     if (category) {
 
         document.getElementById(
             "categoryModalTitle"
-        ).textContent =
-            "Edit Category";
-
+        ).textContent = "Edit Category";
 
         document.getElementById(
             "categoryId"
-        ).value =
-            category.id;
-
+        ).value = category.id;
 
         document.getElementById(
             "categoryName"
-        ).value =
-            category.name || "";
-
+        ).value = category.name || "";
 
         document.getElementById(
             "categoryDescription"
-        ).value =
-            category.description || "";
+        ).value = category.description || "";
 
 
-        if (
-            preview &&
-            category.image_url
-        ) {
+        if (preview && category.image_url) {
 
-            preview.innerHTML =
-                `<img
-                    src="${escapeHTML(
-                        category.image_url
-                    )}"
+            preview.innerHTML = `
+                <img
+                    src="${escapeHTML(category.image_url)}"
                     alt=""
-                >`;
+                >
+            `;
 
         }
 
-    }
-
-    else {
+    } else {
 
         document.getElementById(
             "categoryModalTitle"
-        ).textContent =
-            "Add Category";
-
+        ).textContent = "Add Category";
 
         document.getElementById(
             "categoryId"
@@ -357,68 +268,47 @@ function openCategoryModal(
 
     }
 
-
     modal.hidden = false;
-
 }
 
 
 /* =========================================================
-   SAVE
+   SAVE CATEGORY
    ========================================================= */
 
 async function saveCategory(event) {
 
     event.preventDefault();
 
-
-    if (
-        !(await requireLogin())
-    )
-        return;
-
+    if (!(await requireLogin())) return;
 
     try {
 
         const id =
-            document.getElementById(
-                "categoryId"
-            ).value;
-
+            document.getElementById("categoryId").value;
 
         const name =
-            document.getElementById(
-                "categoryName"
-            ).value
-            .trim();
-
+            document.getElementById("categoryName")
+                .value
+                .trim();
 
         const description =
-            document.getElementById(
-                "categoryDescription"
-            ).value
-            .trim();
-
+            document.getElementById("categoryDescription")
+                .value
+                .trim();
 
         const file =
-            document.getElementById(
-                "categoryImage"
-            )
-            .files?.[0];
-
+            document.getElementById("categoryImage")
+                .files?.[0];
 
         const existing =
             categories.find(
                 item =>
-                    String(item.id) ===
-                    String(id)
+                    String(item.id) === String(id)
             );
 
-
         let image_url =
-            existing?.image_url ||
-            "";
-
+            existing?.image_url || "";
 
         if (file) {
 
@@ -430,57 +320,38 @@ async function saveCategory(event) {
 
         }
 
-
         const payload = {
-
             name,
-
             description,
-
             image_url
-
         };
-
 
         let result;
 
-
         if (id) {
 
-            result =
-                await supabase
-                    .from("categories")
-                    .update(payload)
-                    .eq(
-                        "id",
-                        id
-                    );
+            result = await supabase
+                .from("categories")
+                .update(payload)
+                .eq("id", id);
+
+        } else {
+
+            result = await supabase
+                .from("categories")
+                .insert([payload]);
 
         }
 
-        else {
-
-            result =
-                await supabase
-                    .from("categories")
-                    .insert([
-                        payload
-                    ]);
-
-        }
-
-
-        if (result.error)
+        if (result.error) {
             throw result.error;
-
+        }
 
         document.getElementById(
             "categoryModal"
         ).hidden = true;
 
-
         await loadStaffCategories();
-
 
         alert(
             id
@@ -488,96 +359,70 @@ async function saveCategory(event) {
                 : "Category added successfully."
         );
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
-
 
         alert(
             error.message ||
             "Could not save category."
         );
-
     }
-
 }
 
 
 /* =========================================================
-   DELETE
+   DELETE CATEGORY
    ========================================================= */
 
 async function deleteCategory(id) {
 
-    if (
-        !(await requireLogin())
-    )
-        return;
-
+    if (!(await requireLogin())) return;
 
     const category =
         categories.find(
             item =>
-                String(item.id) ===
-                String(id)
+                String(item.id) === String(id)
         );
 
-
-    if (!category)
-        return;
-
+    if (!category) return;
 
     if (
         !confirm(
             `Delete "${category.name}"?`
         )
-    )
+    ) {
         return;
-
+    }
 
     try {
 
-        const {
-            error
-        } =
-            await supabase
-                .from("categories")
-                .update({
-                    archived: true
-                })
-                .eq(
-                    "id",
-                    id
-                );
+        const { error } = await supabase
+            .from("categories")
+            .update({
+                archived: true
+            })
+            .eq("id", id);
 
-
-        if (error)
+        if (error) {
             throw error;
-
+        }
 
         await loadStaffCategories();
-
 
         alert(
             "Category deleted successfully."
         );
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
-
 
         alert(
             error.message ||
             "Could not delete category."
         );
-
     }
-
 }
 
 
@@ -586,23 +431,16 @@ async function deleteCategory(id) {
    ========================================================= */
 
 document
-    .getElementById(
-        "addCategoryButton"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
+    .getElementById("addCategoryButton")
+    ?.addEventListener("click", () => {
 
-            openCategoryModal();
+        openCategoryModal();
 
-        }
-    );
+    });
 
 
 document
-    .getElementById(
-        "categoryForm"
-    )
+    .getElementById("categoryForm")
     ?.addEventListener(
         "submit",
         saveCategory
@@ -610,7 +448,7 @@ document
 
 
 /* =========================================================
-   PUBLIC
+   PUBLIC CATEGORY CARDS
    ========================================================= */
 
 async function loadPublicCategories() {
@@ -628,8 +466,7 @@ async function loadPublicCategories() {
     ].filter(Boolean);
 
 
-    if (!containers.length)
-        return;
+    if (!containers.length) return;
 
 
     try {
@@ -639,69 +476,65 @@ async function loadPublicCategories() {
 
 
         const html =
-            data.map(
-                category => {
+            data.map(category => {
 
-                    const image =
-                        category.image_url ||
-                        "";
+                const image =
+                    category.image_url || "";
 
 
-                    return `
+                return `
 
-                        <article class="category-card">
+                    <a
+                        href="products.html?category=${encodeURIComponent(category.id)}"
+                        class="category-card category-card-link"
+                    >
 
-                            ${
-                                image
-                                    ? `
-                                        <img
-                                            src="${escapeHTML(image)}"
-                                            alt="${escapeHTML(category.name)}"
-                                        >
-                                      `
-                                    : `
-                                        <div class="category-image-placeholder">
-                                            🌸
-                                        </div>
-                                      `
-                            }
+                        ${
+                            image
+                                ? `
+                                    <img
+                                        src="${escapeHTML(image)}"
+                                        alt="${escapeHTML(category.name)}"
+                                    >
+                                `
+                                : `
+                                    <div class="category-image-placeholder">
+                                        🌸
+                                    </div>
+                                `
+                        }
 
-                            <div class="category-card-body">
+                        <div class="category-card-body">
 
-                                <h3>
-                                    ${escapeHTML(
-                                        category.name
-                                    )}
-                                </h3>
+                            <h3>
+                                ${escapeHTML(category.name)}
+                            </h3>
 
-                                <p>
-                                    ${escapeHTML(
-                                        category.description
-                                    )}
-                                </p>
+                            <p>
+                                ${escapeHTML(category.description)}
+                            </p>
 
-                            </div>
+                            <span class="category-view-link">
+                                View perfumes →
+                            </span>
 
-                        </article>
+                        </div>
 
-                    `;
+                    </a>
 
-                }
-            ).join("");
+                `;
+
+            }).join("");
 
 
-        containers.forEach(
-            container => {
+        containers.forEach(container => {
 
-                container.innerHTML =
-                    html;
+            container.innerHTML = html;
 
-            }
-        );
+        });
 
-    }
 
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Categories error:",
@@ -709,7 +542,6 @@ async function loadPublicCategories() {
         );
 
     }
-
 }
 
 
