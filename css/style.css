@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #1a3d5c;
+  --color-primary-dark: #12293f;
+  --color-accent: #d99a2b;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe57;
+  --color-text: #222222;
+  --color-text-light: #666666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f8fa;
+  --color-border: #e2e5e9;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.btn-danger {
+  background-color: #d64545;
+  color: #ffffff;
+}
+
+/* Page header (used on categories/products/contact pages) */
+.page-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 16px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--color-text-light);
+}
+
+/* Search */
+.search-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  position: relative;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  max-width: 500px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.search-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 24px;
+  right: 24px;
+  max-width: 500px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  z-index: 50;
+}
+
+.search-results:empty {
+  display: none;
+}
+
+/* Product grids (shared) */
+.products-grid, .categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card, .category-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover, .category-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.product-image, .category-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: var(--color-bg-alt);
+}
+
+.product-name, .category-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 12px 12px 4px;
+}
+
+.product-price {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0 12px 12px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 12px 12px;
+}
+
+.quantity-selector button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quantity-selector input {
+  width: 48px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.no-products-message {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 40px 0;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  margin-top: 48px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.footer-container a {
+  color: var(--color-accent);
+}
+
+/* Forms (shared: login + admin) */
+.login-error {
+  background-color: #fdecea;
+  color: #b3261e;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.login-success {
+  background-color: #e6f4ea;
+  color: #1e7b34;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .main-nav {
+    gap: 14px;
+    font-size: 0.9rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-grid, .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+}

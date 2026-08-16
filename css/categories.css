@@ -1,0 +1,23 @@
+.categories-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.category-card {
+  text-align: center;
+}
+
+.category-card .category-name {
+  color: var(--color-primary);
+}
+
+.category-card p.category-description {
+  margin: 0 12px 12px;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+}
+
+.category-card .btn {
+  margin: 0 12px 16px;
+}

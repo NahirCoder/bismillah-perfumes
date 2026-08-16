@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Bismillah Perfumes</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<header class="admin-header">
+  <div class="admin-header-container">
+
+    <a href="admin.html" class="logo">
+      Bismillah Perfumes <span class="admin-tag">Admin</span>
+    </a>
+
+    <nav class="admin-nav">
+      <a href="admin.html">Dashboard</a>
+      <a href="admin-products.html">Products</a>
+      <a href="admin-categories.html">Categories</a>
+      <a href="admin-settings.html">Settings</a>
+
+      <a href="index.html" class="back-to-site">
+        ← Back to Site
+      </a>
+
+      <button id="logout-btn" type="button">
+        Log Out
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <section class="admin-page-header">
+    <h1>Dashboard</h1>
+    <p id="admin-welcome">Welcome back.</p>
+  </section>
+
+  <section class="admin-stats-grid">
+
+    <div class="admin-stat-card">
+      <h3>Total Products</h3>
+      <p id="stat-total-products">-</p>
+    </div>
+
+    <div class="admin-stat-card">
+      <h3>Active Products</h3>
+      <p id="stat-active-products">-</p>
+    </div>
+
+    <div class="admin-stat-card">
+      <h3>Total Categories</h3>
+      <p id="stat-total-categories">-</p>
+    </div>
+
+    <div class="admin-stat-card">
+      <h3>Active Categories</h3>
+      <p id="stat-active-categories">-</p>
+    </div>
+
+  </section>
+
+  <section class="admin-quick-links">
+
+    <a href="admin-product-form.html" class="btn btn-primary">
+      + Add New Product
+    </a>
+
+    <a href="admin-categories.html" class="btn btn-secondary">
+      Manage Categories
+    </a>
+
+    <a href="admin-settings.html" class="btn btn-secondary">
+      Site Settings
+    </a>
+
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/supabase.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/admin.js" defer></script>
+
+</body>
+</html>

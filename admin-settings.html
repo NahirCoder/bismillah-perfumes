@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Settings | Bismillah Perfumes Admin</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<header class="admin-header">
+  <div class="admin-header-container">
+
+    <a href="admin.html" class="logo">
+      Bismillah Perfumes <span class="admin-tag">Admin</span>
+    </a>
+
+    <nav class="admin-nav">
+      <a href="admin.html">Dashboard</a>
+      <a href="admin-products.html">Products</a>
+      <a href="admin-categories.html">Categories</a>
+      <a href="admin-settings.html">Settings</a>
+
+      <a href="index.html" class="back-to-site">
+        ← Back to Site
+      </a>
+
+      <button id="logout-btn" type="button">
+        Log Out
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <section class="admin-page-header">
+    <h1>Site Settings</h1>
+  </section>
+
+  <section class="admin-form-section">
+
+    <form id="settings-form">
+
+      <label for="setting-whatsapp">
+        WhatsApp Number (with country code, e.g. 27821234567)
+      </label>
+
+      <input
+        type="text"
+        id="setting-whatsapp"
+        required
+      >
+
+      <label for="setting-phone">
+        Contact Phone Number
+      </label>
+
+      <input
+        type="text"
+        id="setting-phone"
+      >
+
+      <label for="setting-email">
+        Contact Email
+      </label>
+
+      <input
+        type="email"
+        id="setting-email"
+      >
+
+      <label for="setting-address">
+        Business Address
+      </label>
+
+      <textarea
+        id="setting-address"
+        rows="2"
+      ></textarea>
+
+      <label for="setting-hours">
+        Business Hours
+      </label>
+
+      <input
+        type="text"
+        id="setting-hours"
+        placeholder="e.g. Mon-Fri 8am-5pm"
+      >
+
+      <p
+        id="settings-form-error"
+        class="login-error"
+        style="display:none;"
+      ></p>
+
+      <p
+        id="settings-form-success"
+        class="login-success"
+        style="display:none;"
+      >
+        Settings saved successfully.
+      </p>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        Save Settings
+      </button>
+
+    </form>
+
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/supabase.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/admin.js" defer></script>
+
+</body>
+</html>

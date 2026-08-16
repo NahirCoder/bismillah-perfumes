@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Products | Bismillah Perfumes Admin</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<header class="admin-header">
+  <div class="admin-header-container">
+
+    <a href="admin.html" class="logo">
+      Bismillah Perfumes <span class="admin-tag">Admin</span>
+    </a>
+
+    <nav class="admin-nav">
+      <a href="admin.html">Dashboard</a>
+      <a href="admin-products.html">Products</a>
+      <a href="admin-categories.html">Categories</a>
+      <a href="admin-settings.html">Settings</a>
+
+      <a href="index.html" class="back-to-site">
+        ← Back to Site
+      </a>
+
+      <button id="logout-btn" type="button">
+        Log Out
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <section class="admin-page-header">
+    <h1>Products</h1>
+
+    <a href="admin-product-form.html" class="btn btn-primary">
+      + Add New Product
+    </a>
+  </section>
+
+  <section class="admin-filters">
+
+    <input
+      type="text"
+      id="admin-product-search"
+      placeholder="Search products..."
+    >
+
+    <select id="admin-category-filter">
+      <option value="">All Categories</option>
+    </select>
+
+    <select id="admin-status-filter">
+      <option value="">All Status</option>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+
+  </section>
+
+  <section class="admin-table-section">
+
+    <table class="admin-table">
+
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="admin-products-tbody">
+        <!-- Product rows loaded dynamically by js/admin.js -->
+      </tbody>
+
+    </table>
+
+    <p
+      id="no-products-admin-message"
+      class="no-products-message"
+      style="display:none;"
+    >
+      No products found.
+    </p>
+
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/supabase.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/admin.js" defer></script>
+
+</body>
+</html>

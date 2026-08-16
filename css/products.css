@@ -1,0 +1,13 @@
+.products-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.product-card .view-product-btn {
+  margin: 0 12px 8px;
+}
+
+.product-card .whatsapp-enquiry-btn {
+  margin: 0 12px 12px;
+}

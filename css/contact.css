@@ -1,0 +1,23 @@
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+  text-align: center;
+}
+
+.contact-info {
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}

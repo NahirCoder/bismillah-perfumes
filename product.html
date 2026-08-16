@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product | Bismillah Perfumes</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <a href="index.html" class="logo">Bismillah Perfumes</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="product-detail">
+    <div class="product-image-wrap">
+      <img id="product-image" src="" alt="Product image">
+    </div>
+
+    <div class="product-info">
+      <h1 id="product-name">Product Name</h1>
+      <p id="product-category" class="product-category"></p>
+      <p id="product-price" class="product-price"></p>
+      <p id="product-description" class="product-description"></p>
+
+      <div class="quantity-selector">
+        <label for="quantity-input">Quantity:</label>
+        <button id="qty-minus" type="button">-</button>
+        <input type="number" id="quantity-input" value="1" min="1">
+        <button id="qty-plus" type="button">+</button>
+      </div>
+
+      <a href="#" id="whatsapp-enquiry-btn" class="btn btn-whatsapp">Enquire on WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; <span id="footer-year"></span> Bismillah Perfumes. All rights reserved.</p>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/supabase.js" defer></script>
+<script src="js/product.js" defer></script>
+</body>
+</html>

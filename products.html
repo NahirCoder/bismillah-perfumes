@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | Bismillah Perfumes</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <a href="index.html" class="logo">Bismillah Perfumes</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <h1 id="category-name">Category</h1>
+    <p id="category-description"></p>
+  </section>
+
+  <section class="search-section">
+    <form id="search-form" class="search-form">
+      <input type="text" id="search-input" placeholder="Search for a product..." autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <div id="search-results" class="search-results"></div>
+  </section>
+
+  <section class="products-section">
+    <div id="products-grid" class="products-grid">
+      <!-- Products loaded dynamically by js/products.js -->
+      <!-- Each product card template (rendered by JS):
+      <div class="product-card">
+        <img class="product-image" src="" alt="">
+        <h3 class="product-name"></h3>
+        <p class="product-price"></p>
+        <div class="quantity-selector">
+          <button class="qty-minus">-</button>
+          <input type="number" class="qty-input" value="1" min="1">
+          <button class="qty-plus">+</button>
+        </div>
+        <a class="btn btn-secondary view-product-btn" href="product.html">View Product</a>
+        <a class="btn btn-whatsapp whatsapp-enquiry-btn" href="#">Enquire on WhatsApp</a>
+      </div>
+      -->
+    </div>
+    <p id="no-products-message" class="no-products-message" style="display:none;">No products found in this category.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; <span id="footer-year"></span> Bismillah Perfumes. All rights reserved.</p>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/supabase.js" defer></script>
+<script src="js/products.js" defer></script>
+</body>
+</html>
