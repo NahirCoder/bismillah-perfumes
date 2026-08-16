@@ -23,7 +23,7 @@ async function loadFeaturedProducts(grid) {
     .select('*, categories(name)')
     .eq('is_active', true)
     .order('created_at', { ascending: false })
-    .limit(8);
+    .limit(2);
 
   if (error) {
     console.error('Failed to load featured products:', error.message);
