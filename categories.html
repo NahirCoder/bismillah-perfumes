@@ -4,56 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Categories | Bismillah Perfumes</title>
+<meta name="description" content="Browse fragrance categories from Bismillah Perfumes and explore the current wholesale perfume catalogue.">
+<link rel="canonical" href="https://bismillah-perfumes.vercel.app/categories.html">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/categories.css">
 </head>
 <body>
-
-<header class="site-header">
-  <div class="header-container">
-    <a href="index.html" class="logo">Bismillah Perfumes</a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="categories.html">Categories</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
+<header class="site-header"><div class="header-container"><a href="index.html" class="logo" aria-label="Bismillah Perfumes home">Bismillah Perfumes</a><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="categories.html" aria-current="page">Categories</a><a href="contact.html">Contact</a></nav></div></header>
 <main>
-
-  <section class="page-header">
-    <h1>Our Categories</h1>
-    <p>Browse our product categories below.</p>
-  </section>
-
-  <section class="search-section">
-    <form id="search-form" class="search-form">
-      <input type="text" id="search-input" placeholder="Search for a product..." autocomplete="off">
-      <button type="submit">Search</button>
-    </form>
-    <div id="search-results" class="search-results"></div>
-  </section>
-
-  <section class="categories-section">
-    <div id="categories-grid" class="categories-grid">
-      <!-- Categories loaded dynamically by js/categories.js -->
-    </div>
-  </section>
-
+<section class="page-header"><h1>Our Categories</h1><p>Browse our fragrance categories and explore the products currently available.</p></section>
+<section class="search-section" aria-label="Product search"><form id="search-form" class="search-form"><input type="text" id="search-input" placeholder="Search for a fragrance..." autocomplete="off" aria-label="Search for a fragrance"><button type="submit">Search</button></form><div id="search-results" class="search-results"></div></section>
+<section class="categories-section"><div id="categories-grid" class="categories-grid"></div></section>
 </main>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; <span id="footer-year"></span> Bismillah Perfumes. All rights reserved.</p>
-    <a href="contact.html">Contact Us</a>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
-<script src="js/supabase.js" defer></script>
-<script src="js/categories.js" defer></script>
-<script src="js/products.js" defer></script>
+<footer class="site-footer"><div class="footer-container"><p>&copy; <span id="footer-year"></span> Bismillah Perfumes. All rights reserved.</p><a href="contact.html">Contact Us</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase.js"></script><script src="js/categories.js" defer></script><script src="js/products.js" defer></script>
 </body>
 </html>
