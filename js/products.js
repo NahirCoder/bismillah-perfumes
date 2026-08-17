@@ -1,5 +1,5 @@
 // js/products.js
-// Handles product grids (home featured, category products) and search.
+// Handles product grids (home top picks, category products) and search.
 
 document.addEventListener('DOMContentLoaded', () => {
   initSearch();
@@ -15,23 +15,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ---------- Home page: featured products ----------
+// ---------- Home page: Top Picks For You ----------
 
 async function loadFeaturedProducts(grid) {
   const { data: products, error } = await supabaseClient
     .from('products')
     .select('*, categories(name)')
-    .eq('is_active', true)
-    .order('created_at', { ascending: false })
-    .limit(2);
+    .eq('is_active', true);
 
   if (error) {
-    console.error('Failed to load featured products:', error.message);
+    console.error('Failed to load top picks:', error.message);
     return;
   }
 
+  const allProducts = products || [];
+  const numberOfPerfumes = allProducts.length;
+
+  // Value score = price divided by the number of active perfumes.
+  // Since the divisor is the same for every perfume, the lowest-priced
+  // perfumes receive the best value score. Equal scores are randomized.
+  const topPicks = allProducts
+    .map(product => ({
+      product,
+      valueScore: Number(product.price) / Math.max(1, numberOfPerfumes),
+      randomTieBreaker: Math.random()
+    }))
+    .sort((a, b) => {
+      if (a.valueScore !== b.valueScore) {
+        return a.valueScore - b.valueScore;
+      }
+      return a.randomTieBreaker - b.randomTieBreaker;
+    })
+    .slice(0, 3)
+    .map(item => item.product);
+
   const settings = await getSiteSettings();
-  grid.innerHTML = (products || []).map(p => renderProductCard(p, settings)).join('');
+  grid.innerHTML = topPicks.map(p => renderProductCard(p, settings)).join('');
   attachProductCardEvents(grid);
 }
 
