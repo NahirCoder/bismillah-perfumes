@@ -30,12 +30,12 @@ async function loadProduct() {
   await setupWhatsAppEnquiry(product);
   setupQuantitySelector();
 
-  document.title = `${product.name} | MK-WHOLESALERS`;
+  document.title = `${product.name} | Bismillah Perfumes`;
 }
 
 function renderProduct(product) {
   document.getElementById('product-image').src =
-    product.image_url || 'https://via.placeholder.com/600x600?text=MK-WHOLESALERS';
+    product.image_url || 'https://via.placeholder.com/600x600?text=Bismillah+Perfumes';
   document.getElementById('product-image').alt = product.name;
   document.getElementById('product-name').textContent = product.name;
   document.getElementById('product-category').textContent = product.categories ? product.categories.name : '';
@@ -46,10 +46,12 @@ function renderProduct(product) {
 
 function setupQuantitySelector() {
   const qtyInput = document.getElementById('quantity-input');
+
   document.getElementById('qty-minus').addEventListener('click', () => {
     const current = parseInt(qtyInput.value, 10) || 1;
     qtyInput.value = Math.max(1, current - 1);
   });
+
   document.getElementById('qty-plus').addEventListener('click', () => {
     const current = parseInt(qtyInput.value, 10) || 1;
     qtyInput.value = current + 1;
@@ -63,8 +65,11 @@ async function setupWhatsAppEnquiry(product) {
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
+
     const quantity = document.getElementById('quantity-input').value;
-    const message = `Hello MK-WHOLESALERS, I am interested in ${product.name}. Quantity: ${quantity}.`;
+
+    const message = `Hello Bismillah Perfumes, I am interested in ${product.name}. Quantity: ${quantity}.`;
+
     window.open(buildWhatsAppLink(settings.whatsapp_number, message), '_blank');
   });
 }

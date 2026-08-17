@@ -90,7 +90,8 @@ async function loadProductsPage(grid) {
 // ---------- Rendering ----------
 
 function renderProductCard(product, settings) {
-  const image = product.image_url || 'https://via.placeholder.com/400x300?text=MK-WHOLESALERS';
+  const image = product.image_url || 'https://via.placeholder.com/400x300?text=Bismillah+Perfumes';
+
   return `
     <div class="product-card" data-product-id="${product.id}" data-product-name="${escapeHtml(product.name)}">
       <img class="product-image" src="${image}" alt="${escapeHtml(product.name)}">
@@ -127,12 +128,15 @@ function attachProductCardEvents(grid) {
 
     whatsappBtn.addEventListener('click', async (e) => {
       e.preventDefault();
+
       const settings = await getSiteSettings();
       if (!settings) return;
 
       const productName = card.dataset.productName;
       const quantity = qtyInput.value;
-      const message = `Hello MK-WHOLESALERS, I am interested in ${productName}. Quantity: ${quantity}.`;
+
+      const message = `Hello Bismillah Perfumes, I am interested in ${productName}. Quantity: ${quantity}.`;
+
       window.open(buildWhatsAppLink(settings.whatsapp_number, message), '_blank');
     });
   });
@@ -149,15 +153,19 @@ function initSearch() {
 
   searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const term = searchInput.value.trim();
+
     if (term) {
       window.location.href = `products.html?search=${encodeURIComponent(term)}`;
     }
   });
 
   let debounceTimer;
+
   searchInput.addEventListener('input', () => {
     clearTimeout(debounceTimer);
+
     const term = searchInput.value.trim();
 
     if (!term) {

@@ -3,6 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('categories-grid');
+
   if (grid) {
     loadCategories(grid);
   }
@@ -29,7 +30,8 @@ async function loadCategories(grid) {
 }
 
 function renderCategoryCard(category) {
-  const image = category.image_url || 'https://via.placeholder.com/400x300?text=MK-WHOLESALERS';
+  const image = category.image_url || 'https://via.placeholder.com/400x300?text=Bismillah+Perfumes';
+
   const description = category.description
     ? `<p class="category-description">${escapeHtml(category.description)}</p>`
     : '';
