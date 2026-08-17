@@ -46,12 +46,10 @@ function renderProduct(product) {
 
 function setupQuantitySelector() {
   const qtyInput = document.getElementById('quantity-input');
-
   document.getElementById('qty-minus').addEventListener('click', () => {
     const current = parseInt(qtyInput.value, 10) || 1;
     qtyInput.value = Math.max(1, current - 1);
   });
-
   document.getElementById('qty-plus').addEventListener('click', () => {
     const current = parseInt(qtyInput.value, 10) || 1;
     qtyInput.value = current + 1;
@@ -65,11 +63,8 @@ async function setupWhatsAppEnquiry(product) {
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-
     const quantity = document.getElementById('quantity-input').value;
-
     const message = `Hello Bismillah Perfumes, I am interested in ${product.name}. Quantity: ${quantity}.`;
-
     window.open(buildWhatsAppLink(settings.whatsapp_number, message), '_blank');
   });
 }
